@@ -11,12 +11,11 @@
 </style>
 
 <xmp theme="Spacelab" style="display:none;">
-cheat sheet for smacss with sass
-======
+**cheat sheet for smacss with sass**
 
 based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers [these other links](#sources))
 
-## pattern
+**pattern**
 
   ```html
   <div class="base-block--specific-block">
@@ -33,7 +32,7 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   * modifiers define
   * layouts of blocks and elements are defined by their containing blocks
 
-## directory structure
+**directory structure**
   
   <pre><code>
   css
@@ -47,11 +46,11 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   |   |-- <a href="#element.scss" class="link">element.scss</a>
   </code></pre>
   
-<h3 id="base">base</h3>
+<p id="base">base</p>
 
   global styles like fonts, colors
 
-<h3 id="states.scss">states.scss</h3>
+<p id="states.scss">states.scss</p>
 
   global states
 
@@ -59,7 +58,7 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   .is-active { ... }
   ```
 
-<h3 id="base-block.scss">base-block.scss</h3>
+<p id="base-block.scss">base-block.scss</p>
 
   ```css
   .base-block { ... } /*style of a block*/
@@ -67,14 +66,14 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   .specific-block__element { ... } /*layout of an element nested within .specific-block*/
   ```
 
-<h3 id="element.scss">element.scss</h3>
+<p id="element.scss">element.scss</p>
 
   ```css
   .element { ... } /*style of an element*/
   .element--is-last { ... } /*element specific state*/
   ```
 
-<h2 id="sources">sources</h2>
+<p id="sources">sources</p>
 
   * [SMACSS](http://smacss.com/)
   * [BEM](http://bem.info/)
