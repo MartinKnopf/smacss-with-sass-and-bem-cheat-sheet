@@ -1,4 +1,4 @@
-cheat sheet for scalable and modular css with sass
+cheat sheet for smacss with sass
 ==================
 
 ## Pattern
@@ -45,6 +45,19 @@ cheat sheet for scalable and modular css with sass
   .element--is-last {
     /*element specific state*/
   }
+  ```
+
+## File structure
+  ````
+  style
+  ├── base
+  │   ├── fonts.scss
+  │   ├── colors.scss
+  ├── states
+  │   ├── states.scss
+  ├── modules
+  │   ├── block.scss
+  │   ├── element.scss
   ```
 
 ## sources
