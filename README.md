@@ -1,7 +1,7 @@
 cheat sheet for smacss with sass
 ==================
 
-## Pattern
+## pattern
 
   ```html
   <div class="base-block--specific-block">
@@ -12,15 +12,29 @@ cheat sheet for smacss with sass
     </div>
   </div>
   ```
+
+## directory structure
   
-  **state.scss**
+  <pre><code>
+  css
+  ├── base
+  │   ├── fonts.scss
+  │   ├── colors.scss
+  ├── states
+  │   ├── <a href="#statesscss">states.scss</a>
+  ├── modules
+  │   ├── <a href="#base-blockscss">base-block.scss</a>
+  │   ├── <a href="#elementscss">element.scss</a>
+  </code></pre>
+  
+### states.scss
   ```css
   .is-active {
     /*general state style*/
   }
   ```
-  
-  **base-block.scss**
+
+### base-block.scss
   ```css
   .base-block {
     ...
@@ -35,8 +49,8 @@ cheat sheet for smacss with sass
     /*layout of sub module '.element'*/
   }
   ```
-  
-  **element.scss**
+
+### element.scss
   ```css
   .element {
     /*style of sub module '.element'*/
@@ -45,19 +59,6 @@ cheat sheet for smacss with sass
   .element--is-last {
     /*element specific state*/
   }
-  ```
-
-## File structure
-  ````
-  style
-  ├── base
-  │   ├── fonts.scss
-  │   ├── colors.scss
-  ├── states
-  │   ├── states.scss
-  ├── modules
-  │   ├── block.scss
-  │   ├── element.scss
   ```
 
 ## sources
