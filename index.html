@@ -53,38 +53,22 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   global states
 
   ```css
-  .is-active {
-    ...
-  }
+  .is-active { ... }
   ```
 
 <h3 id="base-block.scss">base-block.scss</h3>
 
   ```css
-  .base-block { /*style of a block*/
-    ...
-  }
-  
-  .specific-block { /*style of a specific block*/
-    @extend .parent;
-    ...
-  }
-  
-  .specific-block__element { /*layout of an element nested within .specific-block*/
-    ...
-  }
+  .base-block { ... } /*style of a block*/
+  .specific-block { @extend .parent; ... } /*style of a specific block*/
+  .specific-block__element { ... } /*layout of an element nested within .specific-block*/
   ```
 
 <h3 id="element.scss">element.scss</h3>
 
   ```css
-  .element { /*style of an element*/
-    ...
-  }
-  
-  .element--is-last { /*element specific state*/
-    ...
-  }
+  .element { ... } /*style of an element*/
+  .element--is-last { ... } /*element specific state*/
   ```
 
 <h2 id="sources">sources</h2>
