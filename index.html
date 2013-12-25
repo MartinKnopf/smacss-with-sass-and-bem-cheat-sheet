@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
-<title>cheat sheet for smacss with sass</title>
+
+<style>
+  .link {
+    text-decoration: underline;
+  }
+</style>
 
 <xmp theme="Spacelab" style="display:none;">
+cheat sheet for smacss with sass
+======
+
 based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers [these other links](#sources))
 
 ## pattern
@@ -26,14 +34,14 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   
   <pre><code>
   css
-  |-- <a href="#base" style="font-style:underline;">base</a>
+  |-- <a href="#base" class="link">base</a>
   |   |-- fonts.scss
   |   |-- colors.scss
   |-- states
-  |   |-- <a href="#statesscss">states.scss</a>
+  |   |-- <a href="#statesscss" class="link">states.scss</a>
   |-- modules
-  |   |-- <a href="#base-blockscss">base-block.scss</a>
-  |   |-- <a href="#elementscss">element.scss</a>
+  |   |-- <a href="#base-blockscss" class="link">base-block.scss</a>
+  |   |-- <a href="#elementscss" class="link">element.scss</a>
   </code></pre>
   
 <h3 id="base">base</h3>
