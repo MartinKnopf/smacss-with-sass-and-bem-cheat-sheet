@@ -1,6 +1,8 @@
 cheat sheet for smacss with sass
 ==================
 
+based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers [these other links](#sources))
+
 ## pattern
 
   ```html
@@ -13,11 +15,16 @@ cheat sheet for smacss with sass
   </div>
   ```
 
+  * blocks define 
+  * elements define
+  * modifiers define
+  * layouts of blocks and elements are defined by their containing blocks
+
 ## directory structure
   
   <pre><code>
   css
-  ├── base
+  ├── <a href="#base">base</a>
   │   ├── fonts.scss
   │   ├── colors.scss
   ├── states
@@ -27,41 +34,51 @@ cheat sheet for smacss with sass
   │   ├── <a href="#elementscss">element.scss</a>
   </code></pre>
   
+### base
+
+  global styles like fonts, colors
+
 ### states.scss
+
+  global **states**
+
   ```css
   .is-active {
-    /*general state style*/
+    ...
   }
   ```
 
 ### base-block.scss
+
   ```css
-  .base-block {
+  .base-block { /*style of a block*/
     ...
   }
   
-  .specific-block {
+  .specific-block { /*style of a specific block*/
     @extend .parent;
     ...
   }
   
-  .specific-block__element {
-    /*layout of sub module '.element'*/
+  .specific-block__element { /*layout of an element nested within .specific-block*/
+    ...
   }
   ```
 
 ### element.scss
+
   ```css
-  .element {
-    /*style of sub module '.element'*/
+  .element { /*style of an element*/
+    ...
   }
   
-  .element--is-last {
-    /*element specific state*/
+  .element--is-last { /*element specific state*/
+    ...
   }
   ```
 
 ## sources
+
   * [SMACSS](http://smacss.com/)
   * [BEM](http://bem.info/)
   * [How to Scale and Maintain Legacy CSS with Sass and SMACSS](http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/)
