@@ -2,83 +2,97 @@
 <html>
 
 <style>
-  body {
-    padding-top; 0px;
+  body > .container {
+    font-size: 12px;
   }
-  .link {
+  .container h1, .container h2 {
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0px;
+    line-height: 12px;
+  }
+  .container h2 {
+    margin-top: 10px;
+    padding: 2px;
+    background-color: #ccc;
+  }
+  .container p, .container pre {
+    margin: 0;
+    padding: 0px;
+    border: none;
+    border-radius: 0px;
+  }
+  .container .link {
+    color: black;
     text-decoration: underline;
   }
 </style>
 
 <xmp theme="Spacelab" style="display:none;">
-**cheat sheet for smacss with sass**
+<h1>cheat sheet for smacss with sass and bem</h1>
 
 based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers [these other links](#sources))
 
-**pattern**
+<h2>pattern</h2>
 
   ```html
-  <div class="base-block--specific-block">
-    <div class="specific-block__element">
-      <div class="element">...</div>
-      <div class="element is-active">...</div>
-      <div class="element--is-last">...</div>
+  <div class="base-module--specific-module">
+    <div class="specific-module__child-module">
+      <div class="child-module">...</div>
+      <div class="child-module is-active">...</div>
+      <div class="child-module--is-last">...</div>
     </div>
   </div>
   ```
+  * modules define their style and the positioning of their child components
+  * a module name contains it's base module's name
+  * global states are defined globally
+  * module specific states are defined inside the module
 
-  * blocks define 
-  * elements define
-  * modifiers define
-  * layouts of blocks and elements are defined by their containing blocks
+<h2>directory structure</h2>
 
-**directory structure**
-  
-  <pre><code>
-  css
-  |-- <a href="#base" class="link">base</a>
+<pre>
+  css/
+  |-- base/
   |   |-- fonts.scss
   |   |-- colors.scss
-  |-- states
+  |   |-- mixins.scss
+  |   |-- variables.scss
+  |-- states/
   |   |-- <a href="#states.scss" class="link">states.scss</a>
-  |-- modules
-  |   |-- <a href="#base-block.scss" class="link">base-block.scss</a>
-  |   |-- <a href="#element.scss" class="link">element.scss</a>
-  </code></pre>
+  |-- modules/
+  |   |-- <a href="#base-module.scss" class="link">base-module.scss</a>
+  |   |-- <a href="#child-module.scss" class="link">child-module.scss</a>
+</pre>
   
-<p id="base">base</p>
-
-  global styles like fonts, colors
-
-<p id="states.scss">states.scss</p>
-
-  global states
+<h2 id="states.scss">states.scss</h2>
 
   ```css
-  .is-active { ... }
+  .is-active { ... }                        /*global state*/
   ```
 
-<p id="base-block.scss">base-block.scss</p>
+<h2 id="base-module.scss">base-module.scss</h2>
 
   ```css
-  .base-block { ... } /*style of a block*/
-  .specific-block { @extend .parent; ... } /*style of a specific block*/
-  .specific-block__element { ... } /*layout of an element nested within .specific-block*/
+  .base-module { ... }                      /*style of a module*/
+  .specific-module { @extend .parent; ... } /*style of a specific module
+                                              NEVER @extend outside of module*/
+  .specific-module__child-module { ... }    /*positioning of child module*/
   ```
 
-<p id="element.scss">element.scss</p>
+<h2 id="child-module.scss">child-module.scss</h2>
 
   ```css
-  .element { ... } /*style of an element*/
-  .element--is-last { ... } /*element specific state*/
+  .child-module { ... }                     /*style of a module*/
+  .child-module--is-last { ... }            /*module specific state*/
   ```
 
-<p id="sources">sources</p>
+<h2 id="sources">sources</h2>
 
-  * [SMACSS](http://smacss.com/)
-  * [BEM](http://bem.info/)
-  * [How to Scale and Maintain Legacy CSS with Sass and SMACSS](http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/)
-  * [Objects in Space - A style-guide for modular SASS development using SMACSS and BEM.](https://medium.com/objects-in-space/f6f404727)
+  * http://smacss.com/
+  * http://bem.info/
+  * http://webuild.envato.com/blog/how-to-scale-and-maintain-legacy-css-with-sass-and-smacss/
+  * https://medium.com/objects-in-space/f6f404727
 </xmp>
 
 <script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
