@@ -54,10 +54,11 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
 <pre>
   css/
   |-- base/
-  |   |-- fonts.scss
-  |   |-- colors.scss
-  |   |-- mixins.scss
-  |   |-- variables.scss
+  |   |-- base.scss
+  |-- mixins/
+  |   |-- _fonts.scss
+  |   |-- _colors.scss
+  |   |-- _mixins.scss
   |-- states/
   |   |-- <a href="#states.scss" class="link">states.scss</a>
   |-- modules/
@@ -74,10 +75,9 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
 <h2 id="base-module.scss">base-module.scss</h2>
 
   ```css
-  .base-module { ... }                      /*style of a module*/
-  .specific-module { @extend .parent; ... } /*style of a specific module
-                                              NEVER @extend outside of module*/
-  .specific-module__child-module { ... }    /*positioning of child module*/
+  .base-module { ... }                                        /*style of a module*/
+  .base-module--specific-module { @extend .base-module; ... } /*style of a specific module*/
+  .specific-module__child-module { ... }                      /*positioning of child module*/
   ```
 
 <h2 id="child-module.scss">child-module.scss</h2>
