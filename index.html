@@ -5,13 +5,16 @@
   body > .container {
     font-size: 12px;
   }
+  .container h1 {
+    font-size: 20px;
+  }
   .container h1, .container h2 {
-    font-size: 12px;
     font-weight: bold;
     margin: 0px;
     line-height: 12px;
   }
   .container h2 {
+    font-size: 12px;
     margin-top: 10px;
     padding: 2px;
     background-color: #ccc;
@@ -21,31 +24,36 @@
     padding: 0px;
     border: none;
     border-radius: 0px;
+    background-color: #f5f5f5;
   }
   .container .link {
     color: black;
     text-decoration: underline;
   }
+  @media print {
+    body {
+      padding-top: 5px !important;
+    }
+  }
 </style>
 
 <xmp theme="Spacelab" style="display:none;">
-<h1>cheat sheet for smacss with sass and bem</h1>
-
-based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers [these other links](#sources))
+<h1>cheat sheet for smacss with sass and bem</h1>based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) (which refers to [these other sources](#sources))
 
 <h2>pattern</h2>
 
   ```html
-  <div class="base-module--specific-module">
-    <div class="specific-module__child-module">
-      <div class="child-module">...</div>
-      <div class="child-module is-active">...</div>
-      <div class="child-module--is-last">...</div>
+  <div class="vehicle--car">
+    <div class="car__engine">
+      <div class="engine">...</div>
+      <div class="engine is-active">...</div>
+      <div class="engine--is-last">...</div>
     </div>
   </div>
   ```
-  * modules define their style and the positioning of their child components
-  * a module name contains it's base module's name
+  * a module name contains its base module's name
+  * a module is defined in its base module's css/sass file
+  * modules define their style and the positioning of nested modules
   * global states are defined globally
   * module specific states are defined inside the module
 
@@ -60,31 +68,31 @@ based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andre
   |   |-- _colors.scss
   |   |-- _mixins.scss
   |-- states/
-  |   |-- <a href="#states.scss" class="link">states.scss</a>
+  |   |-- states.scss
   |-- modules/
-  |   |-- <a href="#base-module.scss" class="link">base-module.scss</a>
-  |   |-- <a href="#child-module.scss" class="link">child-module.scss</a>
+  |   |-- vehicle.scss
+  |   |-- engine.scss
 </pre>
   
 <h2 id="states.scss">states.scss</h2>
 
   ```css
-  .is-active { ... }                        /*global state*/
+  .is-active { ... }                          /*global state*/
   ```
 
-<h2 id="base-module.scss">base-module.scss</h2>
+<h2 id="vehicle.scss">vehicle.scss</h2>
 
   ```css
-  .base-module { ... }                                        /*style of a module*/
-  .base-module--specific-module { @extend .base-module; ... } /*style of a specific module*/
-  .specific-module__child-module { ... }                      /*positioning of child module*/
+  .vehicle { ... }                            /*style of a module*/
+  .vehicle--car { @extend .vehicle; ... }     /*style of a specific module*/
+  .vehicle--car__engine { ... }               /*positioning of a nested module*/
   ```
 
-<h2 id="child-module.scss">child-module.scss</h2>
+<h2 id="engine.scss">engine.scss</h2>
 
   ```css
-  .child-module { ... }                     /*style of a module*/
-  .child-module--is-last { ... }            /*module specific state*/
+  .engine { ... }                             /*style of another module*/
+  .engine--is-last { ... }                    /*module specific state*/
   ```
 
 <h2 id="sources">sources</h2>
