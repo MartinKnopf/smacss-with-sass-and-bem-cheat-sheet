@@ -24,7 +24,8 @@ smacss with sass and bem
 ```
 css/
 |-- base/
-    |-- base.scss
+    |-- base.scss     body { ... }                              /*element styles*/
+    |                 h1 { ... }
     |-- _fonts.scss
     |-- _colors.scss
     |-- _mixins.scss
