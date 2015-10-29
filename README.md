@@ -1,4 +1,4 @@
-cheat sheet for smacss with sass and bem
+smacss with sass and bem
 =========
 
 ##pattern
