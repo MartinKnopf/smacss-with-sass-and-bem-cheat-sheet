@@ -3,11 +3,11 @@ cheat sheet for smacss with sass and bem
 
 #pattern
 ```html
-  <div class="vehicle--car">
-    <div class="vehicle--car__engine">
-      <div class="engine">...</div>
-      <div class="engine is-active">...</div>
-      <div class="engine--is-last">...</div>
+  <div class="vehicle--car">                  <!-- the style of a module that extends a parent module -->
+    <div class="vehicle--car__engine">        <!-- the layout of a module -->
+      <div class="engine">...</div>           <!-- the style of a module -->
+      <div class="engine is-active">...</div> <!-- module with global state -->
+      <div class="engine--is-last">...</div>  <!-- module with module-specific state -->
     </div>
   </div>
 ```
