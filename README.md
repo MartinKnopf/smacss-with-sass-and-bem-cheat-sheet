@@ -20,36 +20,22 @@ cheat sheet for smacss with sass and bem
 * global states are defined globally
 * module specific states are defined inside the module
 
-##directory structure
+##what belongs where
 ```
 css/
 |-- base/
-|   |-- base.scss
-|   |-- _fonts.scss
-|   |-- _colors.scss
-|   |-- _mixins.scss
+    |-- base.scss
+    |-- _fonts.scss
+    |-- _colors.scss
+    |-- _mixins.scss
 |-- states/
-|   |-- states.scss
+    |-- states.scss     .is-active { ... }                          /*global state*/
 |-- modules/
-|   |-- vehicle.scss
-|   |-- engine.scss
-```
-
-##file contents
-```
-states.scss
-  .is-active { ... }                          /*global state*/
-```
-```
-vehicle.scss
-  .vehicle { ... }                            /*style of a module*/
-  .vehicle--car { @extend .vehicle; ... }     /*style of a specific module*/
-  .vehicle--car__engine { ... }               /*layout of a nested module*/
-```
-```
-engine.scss
-  .engine { ... }                             /*style of another module*/
-  .engine--is-last { ... }                    /*module specific state*/
+    |-- vehicle.scss    .vehicle { ... }                            /*style of a module*/
+    |                   .vehicle--car { @extend .vehicle; ... }     /*style of a specific module*/
+    |                   .vehicle--car__engine { ... }               /*layout of a nested module*/
+    |-- engine.scss     .engine { ... }                             /*style of another module*/
+                        .engine--is-last { ... }                    /*module specific state*/
 ```
 
 ##sources
