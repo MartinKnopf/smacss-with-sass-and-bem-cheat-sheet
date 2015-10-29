@@ -25,7 +25,7 @@ smacss with sass and bem
 css/
 |-- base/
     |-- base.scss     body { ... }                              /*element styles*/
-    |                 h1 { ... }
+                      h1 { ... }
     |-- _fonts.scss
     |-- _colors.scss
     |-- _mixins.scss
@@ -33,10 +33,11 @@ css/
     |-- states.scss   .is-active { ... }                        /*global state*/
 |-- modules/
     |-- vehicle.scss  .vehicle { ... }                          /*style of module*/
-    |                 .vehicle--car { @extend .vehicle; ... }   /*style of specific module*/
-    |                 .vehicle--car__engine { ... }             /*layout of nested module*/
+                      .vehicle--car { @extend .vehicle; ... }   /*style of specific module*/
+                      .vehicle--car__engine { ... }             /*layout of nested module*/
     |-- engine.scss   .engine { ... }                           /*style of another module*/
                       .engine--is-last { ... }                  /*module specific state*/
+|-- main.scss                                                   /*imports all necessary sass files*/
 ```
 
 ##sources
