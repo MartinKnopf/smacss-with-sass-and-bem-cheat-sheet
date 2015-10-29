@@ -13,9 +13,10 @@ cheat sheet for smacss with sass and bem
 ```
 
 ##rules
-* a module name contains its base module's name
+* separate layout and style
+* a module name contains the name of its base module
 * a module is defined in its base module's css/sass file
-* modules define their style and the positioning of nested modules
+* modules define **their own style** and the layout of nested modules
 * global states are defined globally
 * module specific states are defined inside the module
 
@@ -43,7 +44,7 @@ states.scss
 vehicle.scss
   .vehicle { ... }                            /*style of a module*/
   .vehicle--car { @extend .vehicle; ... }     /*style of a specific module*/
-  .vehicle--car__engine { ... }               /*positioning of a nested module*/
+  .vehicle--car__engine { ... }               /*layout of a nested module*/
 ```
 ```
 engine.scss
