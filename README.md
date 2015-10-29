@@ -1,7 +1,7 @@
 cheat sheet for smacss with sass and bem
 =========
 
-#pattern
+##pattern
 ```html
   <div class="vehicle--car">                  <!-- the style of a module that extends a parent module -->
     <div class="vehicle--car__engine">        <!-- the layout of a module -->
@@ -12,14 +12,14 @@ cheat sheet for smacss with sass and bem
   </div>
 ```
 
-#rules
+##rules
 * a module name contains its base module's name
 * a module is defined in its base module's css/sass file
 * modules define their style and the positioning of nested modules
 * global states are defined globally
 * module specific states are defined inside the module
 
-#directory structure
+##directory structure
 ```
 css/
 |-- base/
@@ -34,7 +34,7 @@ css/
 |   |-- engine.scss
 ```
 
-#file contents
+##file contents
 ```
 states.scss
   .is-active { ... }                          /*global state*/
@@ -50,7 +50,8 @@ engine.scss
   .engine { ... }                             /*style of another module*/
   .engine--is-last { ... }                    /*module specific state*/
 ```
-#sources
+
+##sources
 based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) which refers to the following sources:
 * [http://smacss.com/](http://smacss.com/)
 * [http://bem.info/](http://bem.info/)
