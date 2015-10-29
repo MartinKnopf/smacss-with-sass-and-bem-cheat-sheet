@@ -2,7 +2,7 @@ cheat sheet for smacss with sass and bem
 =========
 
 ##pattern
-```html
+```
   <div class="vehicle--car">                  <!-- the style of a module -->
     <div class="vehicle--car__engine">        <!-- the layout of a nested module -->
       <div class="engine">...</div>           <!-- the style of a module -->
@@ -29,13 +29,13 @@ css/
     |-- _colors.scss
     |-- _mixins.scss
 |-- states/
-    |-- states.scss     .is-active { ... }                        /*global state*/
+    |-- states.scss   .is-active { ... }                        /*global state*/
 |-- modules/
-    |-- vehicle.scss    .vehicle { ... }                          /*style of module*/
-    |                   .vehicle--car { @extend .vehicle; ... }   /*style of specific module*/
-    |                   .vehicle--car__engine { ... }             /*layout of nested module*/
-    |-- engine.scss     .engine { ... }                           /*style of another module*/
-                        .engine--is-last { ... }                  /*module specific state*/
+    |-- vehicle.scss  .vehicle { ... }                          /*style of module*/
+    |                 .vehicle--car { @extend .vehicle; ... }   /*style of specific module*/
+    |                 .vehicle--car__engine { ... }             /*layout of nested module*/
+    |-- engine.scss   .engine { ... }                           /*style of another module*/
+                      .engine--is-last { ... }                  /*module specific state*/
 ```
 
 ##sources
