@@ -2,7 +2,7 @@ smacss with sass and bem
 =========
 
 ##pattern
-```
+```html
   <div class="vehicle--car">                  <!-- the style of a module -->
     <div class="vehicle--car__engine">        <!-- the layout of a nested module -->
       <div class="engine">...</div>           <!-- the style of a module -->
