@@ -1,7 +1,7 @@
 smacss with sass and bem
 =========
 
-##pattern
+## pattern
 ```html
   <div class="vehicle--car">                  <!-- the style of a module -->
     <div class="vehicle--car__engine">        <!-- the layout of a nested module -->
@@ -12,7 +12,7 @@ smacss with sass and bem
   </div>
 ```
 
-##rules
+## rules
 * separate layout and style
 * a module name contains the name of its base module
 * a module is defined in its base module's css/sass file
@@ -20,7 +20,7 @@ smacss with sass and bem
 * global states are defined globally
 * module specific states are defined inside the module
 
-##what belongs where
+## what belongs where
 ```
 css/
 |-- base/
@@ -40,7 +40,7 @@ css/
 |-- main.scss                                                   /*imports all necessary sass files*/
 ```
 
-##sources
+## sources
 based on [this article](https://medium.com/objects-in-space/f6f404727) by [Andrew Colclough](https://twitter.com/wtc) which refers to the following sources:
 * [http://smacss.com/](http://smacss.com/)
 * [http://bem.info/](http://bem.info/)
